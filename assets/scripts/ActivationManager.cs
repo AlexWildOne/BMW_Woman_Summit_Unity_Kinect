@@ -7,7 +7,7 @@ public class ActivationManager : MonoBehaviour
     [Header("Tracking")]
     public KinectBodyReader bodyReader;
 
-    [Header("UI (fallback, se não usares UI_Experience_Controller)")]
+    [Header("UI (fallback, se nÃ£o usares UI_Experience_Controller)")]
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI mainMessage;
     public TextMeshProUGUI subText;
@@ -29,28 +29,28 @@ public class ActivationManager : MonoBehaviour
     [Tooltip("Quanto tempo fica no momento BMW")]
     public float showMomentTime = 3f;
 
-    [Header("Mensagens Customizáveis")]
-    [TextArea] public string idleMessage = "Aproxima-te do espaço BMW Woman Summit";
+    [Header("Mensagens CustomizÃ¡veis")]
+    [TextArea] public string idleMessage = "Aproxima-te do espaÃ§o BMW Woman Summit";
     [TextArea] public string introMessage = "Explora o movimento, sente a energia";
     [TextArea] public string poseMessage = "Agora faz a tua power pose";
-    [TextArea] public string momentMessage = "Este é o teu momento BMW";
+    [TextArea] public string momentMessage = "Este Ã© o teu momento BMW";
     [TextArea] public string uploadingMessage = "A preparar o teu momento";
-    [TextArea] public string uploadingSub = "Só mais um segundo, estamos a guardar a tua imagem.";
+    [TextArea] public string uploadingSub = "SÃ³ mais um segundo, estamos a guardar a tua imagem.";
 
-    [Header("Títulos Customizáveis")]
+    [Header("TÃ­tulos CustomizÃ¡veis")]
     public string idleTitle = "BMW WOMAN SUMMIT";
     public string introTitle = "BMW WOMAN SUMMIT";
     public string poseTitle = "BMW WOMAN SUMMIT";
     public string momentTitle = "BMW WOMAN SUMMIT";
     public string uploadingTitle = "BMW WOMAN SUMMIT";
 
-    [Header("Subtítulos Customizáveis")]
-    [TextArea] public string idleSub = "Aproxima-te da área marcada para ativares a experiência.";
-    [TextArea] public string introSub = "Move-te livremente, deixa o corpo ganhar confiança.";
-    [TextArea] public string poseSub = "Levanta o braço direito, abre o peito, assume a tua power pose.";
-    [TextArea] public string momentSub = "Guarda este momento, é só teu.";
+    [Header("SubtÃ­tulos CustomizÃ¡veis")]
+    [TextArea] public string idleSub = "Aproxima-te da Ã¡rea marcada para ativares a experiÃªncia.";
+    [TextArea] public string introSub = "Move-te livremente, deixa o corpo ganhar confianÃ§a.";
+    [TextArea] public string poseSub = "Levanta o braÃ§o direito, abre o peito, assume a tua power pose.";
+    [TextArea] public string momentSub = "Guarda este momento, Ã© sÃ³ teu.";
 
-    [Header("Opções de experiência")]
+    [Header("OpÃ§Ãµes de experiÃªncia")]
     [Tooltip("Se true, durante o Momento BMW o carro e gestos ficam bloqueados.")]
     public bool lockInteractionDuringMoment = true;
 
@@ -101,7 +101,7 @@ public class ActivationManager : MonoBehaviour
         {
             if (!warnedMissingBodyReader)
             {
-                Debug.LogWarning("ActivationManager: Referência ao 'bodyReader' está ausente. A experiência não pode iniciar tracking.");
+                Debug.LogWarning("ActivationManager: ReferÃªncia ao 'bodyReader' estÃ¡ ausente. A experiÃªncia nÃ£o pode iniciar tracking.");
                 warnedMissingBodyReader = true;
             }
             return;
@@ -227,7 +227,7 @@ public class ActivationManager : MonoBehaviour
             OnMomentEnded?.Invoke();
 
             // Tipicamente, com bmw_sync:
-            // EnterUploadingState() e só depois CompleteUpload(success)
+            // EnterUploadingState() e sÃ³ depois CompleteUpload(success)
             SetInteractionLocked(false);
 
             state = ActivationState.WaitingPowerPose;
@@ -358,7 +358,7 @@ public class ActivationManager : MonoBehaviour
             uiController = GetComponentInChildren<UI_Experience_Controller>();
     }
 
-    // ===================== Eventos de alto nível =====================
+    // ===================== Eventos de alto nÃ­vel =====================
 
     void SetExperienceActive(bool active)
     {
